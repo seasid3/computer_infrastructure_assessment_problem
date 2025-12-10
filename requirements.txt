@@ -1,5 +1,6 @@
 numpy
 datetime
 pandas
+# seaborn
 matplotlib
 yfinance
