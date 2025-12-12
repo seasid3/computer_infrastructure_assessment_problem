@@ -22,6 +22,9 @@ def get_data():
     data = yf.download(tickers=faang_stocks, period='5d', interval='1h')
     return data
 
+# Get the data
+df = get_data()
+
 # Current data and time
 now = dt.datetime.now()
 
