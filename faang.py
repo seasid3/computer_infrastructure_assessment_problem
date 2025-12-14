@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # This code will download hourly FAANG stock data from yFinance and will plot closing prices over
 # time. The code will run
 # Author: Orla Woods

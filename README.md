@@ -17,3 +17,5 @@ get_data() function used to save stock data into a date and time stampted csv fi
 I was having a lot of trouble with getting the plot to save to the plots folder. rewatched the lecture. couldnt figure it out. had a very very (hours long) chat with chatgpt and
 it turned out i was actually running good code but didnt call it at teh end. defined plot_data() but didnt call the function. chat gpt conversation: 
 https://chatgpt.com/share/693c7f21-60e4-800d-b154-feaa2fe184ef
+
+I was running ./faang.py but it wasnt working. used chatgpt to help trouble shoot (https://chatgpt.com/share/693e950f-24cc-800d-8201-a5ff59f6200e). Turns out there can be no comment before the shebang line, this must be the first line in the code. Really good lesson learned!
