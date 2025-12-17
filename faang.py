@@ -62,7 +62,7 @@ def plot_data():
     close_df.plot(ax=ax)
     plt.xlabel('Date')
     plt.ylabel('Price (USD)') 
-    ax.legend(title='Stocks')  
+    ax.legend(title='Stocks', loc='upper right')  
     
     # Set the plot title to current date
     ax.set_title(dt.datetime.now().strftime("%Y-%m-%d"))
