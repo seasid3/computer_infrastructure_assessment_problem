@@ -1,4 +1,4 @@
-# Action script to run faang.py
+# Action script to run faang.py and commit any changes
 # https://chatgpt.com/share/69426d8d-e9f4-800d-ab04-ed14b265cd39
 
 name: Run faang.py and commit results
