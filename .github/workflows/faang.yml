@@ -44,3 +44,8 @@ jobs:
           git add .
           git commit -m 'Automated changes from faang.py' || echo 'No changes to commit'
 
+      - name: Push changes
+        run: |
+          git push
+
+
