@@ -4,12 +4,9 @@
 name: Run faang.py and commit results
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
-    - cron: "55 8 * * *"
+    - cron: "10 9 * * *"
 
 permissions:
   contents: write
@@ -32,7 +29,8 @@ jobs:
 
       - name: Run faang.py
         run: |
-          faang.py
+          chmod +x faang.py
+          ./faang.py
 
       - name: Commit changes
         run: |
