@@ -19,9 +19,6 @@ import datetime as dt
 # Import yFinance   
 import yfinance as yf
 
-# Import Path from pathlib
-from pathlib import Path
-
 # Define function to get data
 def get_data():
     # Define the FAANG stocks
