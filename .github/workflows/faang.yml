@@ -1,18 +1,19 @@
 # Action script to run faang.py and commit any changes.
 # Author: Orla Woods with ChatGPT assistance.
-# https://chatgpt.com/share/69426d8d-e9f4-800d-ab04-ed14b265cd39
+# Assistance for script: https://chatgpt.com/share/69426d8d-e9f4-800d-ab04-ed14b265cd39
 # GitHub Actions documentation: https://docs.github.com/en/actions
+# Improving comments: https://chatgpt.com/share/6947cc09-5b28-800d-b8ab-f8624bd1dde4
 
 # Assign a name to the workflow. This is shown in the GitHub Actions tab.
-name: Run faang.py and commit results
+name: Run faang.py download and plot and commit results
 
 on:
-  workflow_dispatch: # To allow manual triggering of the workflow.
+  workflow_dispatch: # To allow manual triggering of the workflow for testing and debugging.
   schedule:
-    - cron: "17 9 * * 6"  # To run the workflow every Saturday at 09:17 UTC.
+    - cron: "17 9 * * 6"  # To run the workflow every Saturday at 09:17 UTC (GitHub Actions are performed in UTC).
 
 permissions:
-  contents: write # Allow the workflow to push changes to the repository.
+  contents: write # Allow the workflow to commit and push changes to the repository.
 
 jobs: # Define the jobs to be run in this workflow.
   run-faang: # Run the faang job.
@@ -23,7 +24,7 @@ jobs: # Define the jobs to be run in this workflow.
         uses: actions/checkout@v4 # Using the checkout action (v4) to check out the repository.
         with:
           persist-credentials: true # Persist the credentials to allow pushing changes.
-          fetch-depth: 0 # Fetch all history for all branches and tags.
+          fetch-depth: 0 # Fetch all history for all branches and tags to safely allow commit and push changes.
 
       - name: Set up Python # Set up the Python environment.
         uses: actions/setup-python@v5 # Using the setup-python action (v5) to set up Python.
@@ -37,17 +38,17 @@ jobs: # Define the jobs to be run in this workflow.
 
       - name: Run faang.py # Execute the faang.py script.
         run: |  
-          chmod +x faang.py # Modify the faany.py file to make sure the script is executable
+          chmod +x faang.py # Modify the faang.py file to make sure the script is executable. Required when using a shebang and not explicitly calling python.
           ./faang.py # Run the faang.py script
 
       - name: Commit changes # Commit any changes made by faang.py to GitHub.
         run: |
-          git config --global user.name 'github-actions[bot]' # Configure git with a user name
+          git config --global user.name 'github-actions[bot]' # Configure git with a user name, required for non-interactive commits, conventional for automated workflows
           git config --global user.email 'github-actions[bot]@users.noreply.github.com' # Configure git with a user email 
           git add . # Stage all changes for commit
           git commit -m 'Automated changes from faang.py' || echo 'No changes to commit' # Commit the changes with a message, or echo if there are no changes
 
       - name: Push changes # Push the committed changes back to the repository.
         run: |
-          git push  # Push the changes to the remote repository
+          git push  # Push the changes to the remote repository in the default branch and may overwrite concurrent changes.
 
