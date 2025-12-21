@@ -1,4 +1,3 @@
-datetime
-pandas
 matplotlib
+pandas
 yfinance
