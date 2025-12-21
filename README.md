@@ -52,7 +52,7 @@ The function `plot_data()` opens the latest data file in the `data` folder of th
 The Python script `faang.py` (located at the root of the repository) contains the functions above. Running the script via the terminal command `./faang.py` downloads the FAANG stock data and generates a plot of the closing prices for all five companies. The resulting CSV and PNG files are saved with date- and time-stamped filenames.  
 
 ## Problem 4: Automation  
-The GitHub Actions workflow defined in `faang.yml` (located at the root of the repository) runs the `faang.py` script every Saturday at 09:17 UTC. At this time, UTC coincides with Irish time, so no adjustment is necessary. Each line of the workflow is explained within `faang.yml`. The workflow can also be triggered manually for testing or debugging purposes. 
+The GitHub Actions workflow defined in `faang.yml` (located at the root of the repository) runs the `faang.py` script every Saturday at 09:17 UTC. At this time, UTC coincides with Irish time, so no adjustment is necessary. Each line of the workflow is explained within `faang.yml`. The workflow can also be triggered manually for testing or debugging purposes. Testing included running the workflow at regular intervals overnight.
 
 ## Note
 This README was refined with the assistance of [ChatGPT](https://chatgpt.com/share/6947e675-8fc0-800d-a101-3936b7f35c41) suggestions.
