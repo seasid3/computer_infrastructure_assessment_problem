@@ -16,28 +16,27 @@ All other modules used are part of the Python standard library.
 
 ### 1. Running the script from the terminal  
 
-'''Navigate to the repository root'''  
+'''# Navigate to the repository root.'''  
 cd computer_infrastructure_assessment_problem  
 
-# Make the script executable (Unix-like systems)  
+'''# Make the script executable.'''  
 chmod +x faang.py  
 
-# Run the script  
+'''# Run the script.'''  
 ./faang.py  
 
 
 ### 2. Running the script in a Jupyter notebook  
 
-from faang import get_data, plot_data  
+from faang import `get_data`, `plot_data`  
 
-# Download stock data  
+'''# Download stock data.'''  
 df = get_data()  
 
-# Generate and save a plot  
-# NOTE: plot_data() must be defined to accept a DataFrame  
+'''# Generate and save a plot.'''  
+'''# NOTE: plot_data() must be defined to accept a DataFrame.'''  
 plot_data(df)  
  
-
 ## Problem 1: Data from yfinance  
 The function `get_data()` downloads hourly data from Yahoo! Finance for the previous five days for the five FAANG stocks: Facebook (META), Apple (AAPL), Amazon (AMZN), Netflix (NFLX), and Google (GOOG), using the [yfinance](https://github.com/ranaroussi/yfinance) Python package. The downloaded stock data is saved as a date- and time-stamped CSV file (local Irish time) in the `data` directory at the root of the repository. The function returns the data as a pandas `DataFrame` for use in a Jupyter notebook or script.   
 
