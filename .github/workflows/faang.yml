@@ -9,7 +9,7 @@ name: Run faang.py and commit results
 on:
   workflow_dispatch: # To allow manual triggering of the workflow.
   schedule:
-    - cron: "*/5 * * * *"  # To run the workflow every Saturday at 09:17 UTC.
+    - cron: "17 9 * * 6"  # To run the workflow every Saturday at 09:17 UTC.
 
 permissions:
   contents: write # Allow the workflow to push changes to the repository.
